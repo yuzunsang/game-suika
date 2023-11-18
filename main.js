@@ -39,6 +39,8 @@ const topLine = Bodies.rectangle(310, 150, 620, 2, {
 
 World.add(world, [leftWall, rightWall, ground, topLine]);
 
+engine.gravity.scale = 0.0015; // 떨어지는 속도 50% 상향
+
 Render.run(render);
 Runner.run(engine);
 
