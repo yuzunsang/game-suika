@@ -41,7 +41,7 @@ const FRUITS = [
   },
   {
     name: "08_pineapple",
-    radius: 250 / 2, // 크기 50 증가
+    radius: 242 / 2, // 크기 50 증가 (추가 변경 - 더 둥글게)
     score: 45,
   },
   {
