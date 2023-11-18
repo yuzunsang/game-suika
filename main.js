@@ -30,6 +30,7 @@ const ground = Bodies.rectangle(310, 820, 620, 60, {
   render: { fillStyle: "#E6B143" },
 });
 
+// test 150
 const topLine = Bodies.rectangle(310, 150, 620, 2, {
   name: "topLine",
   isStatic: true,
@@ -39,8 +40,6 @@ const topLine = Bodies.rectangle(310, 150, 620, 2, {
 
 World.add(world, [leftWall, rightWall, ground, topLine]);
 
-engine.gravity.scale = 0.0015; // 떨어지는 속도 50% 상향
-
 Render.run(render);
 Runner.run(engine);
 
@@ -49,11 +48,20 @@ let currentFruit = null;
 let disableAction = false;
 let interval = null;
 
+// 최고 기록 갱신 시 localStorage에 저장
+const score = document.querySelector("#score");
+const high = document.querySelector("#high");
+let record = localStorage.getItem("high-score");
+
+if (record !== null) {
+  high.innerText = record;
+}
+
 function addFruit() {
   const index = Math.floor(Math.random() * 5);
   const fruit = FRUITS[index];
 
-  const body = Bodies.circle(300, 50, fruit.radius, {
+  const body = Bodies.circle(300, 120, fruit.radius, {
     index: index,
     isSleeping: true,
     render: {
@@ -104,11 +112,12 @@ window.onkeydown = (event) => {
     case "KeyS":
       currentBody.isSleeping = false;
       disableAction = true;
+      engine.gravity.scale = 0.0025; // default보다 150% 상향
 
       setTimeout(() => {
         addFruit();
         disableAction = false;
-      }, 1000);
+      }, 670);
       break;
   }
 };
@@ -133,6 +142,13 @@ Events.on(engine, "collisionStart", (event) => {
 
       World.remove(world, [collision.bodyA, collision.bodyB]);
 
+      score.innerText = parseInt(score.innerText) + FRUITS[index].score;
+
+      if (parseInt(score.innerText) >= parseInt(high.innerText)) {
+        localStorage.setItem("high-score", score.innerText);
+        high.innerText = parseInt(score.innerText);
+      }
+
       const newFruit = FRUITS[index + 1];
 
       const newBody = Bodies.circle(
@@ -153,8 +169,10 @@ Events.on(engine, "collisionStart", (event) => {
     if (
       !disableAction &&
       (collision.bodyA.name === "topLine" || collision.bodyB.name === "topLine")
-    )
-      alert("Game Over");
+    ) {
+      alert("Game Over.");
+      location.reload();
+    }
   });
 });
 

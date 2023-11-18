@@ -1,13 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Suika Game</title>
   </head>
   <body>
     <div id="app"></div>
+    <div id="records">
+      <div>
+        <h3>현재 점수</h3>
+        <h5 id="score">0</h5>
+        <h3>최고 점수</h3>
+        <h5 id="high">0</h5>
+      </div>
+    </div>
+
+    <footer>
+      <h5>
+        제작자 &#124; JUNSANG YOO &#124;
+        <a href="https://github.com/yuzunsang/game-suika" target="_blank">
+          repository link
+        </a>
+        &#124; beta ver. 버그 제보 및 개선 제안 많이 부탁드려요🙏 &#124; PC⭕
+        &#124; 모바일, 태블릿❌(추후 지원 예정)
+      </h5>
+    </footer>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
