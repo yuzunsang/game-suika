@@ -26,32 +26,32 @@ const FRUITS = [
   },
   {
     name: "05_apple",
-    radius: 124 / 2, // 크기 10 증가
+    radius: 124 / 2,
     score: 21,
   },
   {
     name: "06_pear",
-    radius: 149 / 2, // 크기 20 증가
+    radius: 149 / 2,
     score: 28,
   },
   {
     name: "07_peach",
-    radius: 186 / 2, // 크기 30 증가
+    radius: 186 / 2,
     score: 36,
   },
   {
     name: "08_pineapple",
-    radius: 242 / 2, // 크기 50 증가 (추가 변경 - 더 둥글게)
+    radius: 244 / 2,
     score: 45,
   },
   {
     name: "09_melon",
-    radius: 300 / 2, // 크기 80 증가
+    radius: 300 / 2,
     score: 55,
   },
   {
     name: "10_watermelon",
-    radius: 379 / 2, // 크기 120 증가
+    radius: 379 / 2,
     score: 66,
   },
 ];

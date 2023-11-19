@@ -30,12 +30,11 @@ const ground = Bodies.rectangle(310, 820, 620, 60, {
   render: { fillStyle: "#E6B143" },
 });
 
-// test 150
-const topLine = Bodies.rectangle(310, 150, 620, 2, {
+const topLine = Bodies.rectangle(310, 150, 560, 2, {
   name: "topLine",
   isStatic: true,
   isSensor: true,
-  render: { fillStyle: "#E6B143" },
+  render: { fillStyle: "#ff0000" },
 });
 
 World.add(world, [leftWall, rightWall, ground, topLine]);
@@ -88,11 +87,11 @@ window.onkeydown = (event) => {
       interval = setInterval(() => {
         if (currentBody.position.x - currentFruit.radius > 30) {
           Body.setPosition(currentBody, {
-            x: currentBody.position.x - 1,
+            x: currentBody.position.x - 2,
             y: currentBody.position.y,
           });
         }
-      }, 5);
+      }, 2.5);
 
       break;
 
@@ -102,11 +101,11 @@ window.onkeydown = (event) => {
       interval = setInterval(() => {
         if (currentBody.position.x + currentFruit.radius < 590) {
           Body.setPosition(currentBody, {
-            x: currentBody.position.x + 1,
+            x: currentBody.position.x + 2,
             y: currentBody.position.y,
           });
         }
-      }, 5);
+      }, 2.5);
       break;
 
     case "KeyS":
