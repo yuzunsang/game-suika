@@ -56,9 +56,22 @@ if (record !== null) {
   high.innerText = record;
 }
 
+let isNextFruit = false;
+let nextIndex = Math.floor(Math.random() * 5);
+
 function addFruit() {
-  const index = Math.floor(Math.random() * 5);
+  let index = -1;
+
+  if (!isNextFruit) {
+    index = Math.floor(Math.random() * 5);
+    isNextFruit = true;
+  } else {
+    index = nextIndex;
+    nextIndex = Math.floor(Math.random() * 5);
+  }
   const fruit = FRUITS[index];
+
+  showNextFruit(); // 다음 과일 보여주기
 
   const body = Bodies.circle(300, 120, fruit.radius, {
     index: index,
@@ -74,6 +87,16 @@ function addFruit() {
 
   World.add(world, [body]);
 }
+
+const showNextFruit = () => {
+  const previewNext = document.querySelector(".preview__next");
+  let nextFruit = FRUITS[nextIndex].name;
+
+  previewNext.innerHTML = `
+    <h1 class="preview__title">NEXT</h1>
+    <img clas="preview__img" src="${nextFruit}.png" >
+    `;
+};
 
 window.onkeydown = (event) => {
   if (disableAction) {
