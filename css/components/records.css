@@ -1,0 +1,41 @@
+#records {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  width: 25%;
+  height: 95vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.records__curr {
+  height: 45%;
+  background-color: var(--light-purple);
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+}
+.records__curr--title {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 0.2rem;
+}
+.records__curr--score {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.records__high {
+  height: 45%;
+  background-color: var(--light-purple);
+  padding: 0.5rem;
+}
+.records__high--title {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 0.2rem;
+}
+.records__high--score {
+  font-weight: bold;
+  font-size: 1.5rem;
+}

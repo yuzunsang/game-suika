@@ -3,8 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./public/10_watermelon.png" />
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/card.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/components/preview.css" />
+    <link rel="stylesheet" href="css/components/records.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Suika Game</title>
   </head>
@@ -13,10 +17,7 @@
       <div class="preview__next card">
         <!-- innerHTML로 element 넣기 -->
       </div>
-      <div class="preview__order card">
-        <!-- 진화의 고리 img public에 추가 -->
-        <!-- element 넣기 -->
-      </div>
+      <div class="preview__order card"></div>
     </div>
     <div id="records">
       <div class="records__score">
@@ -26,15 +27,6 @@
         <!-- innerHTML로 highscore 및 ranking 넣기 -->
       </div>
     </div>
-
-    <!-- contents + score -분리하여 처리 -->
-    <div class="hidden">
-      <h3>현재 점수</h3>
-      <h5 id="score">0</h5>
-      <h3>최고 점수</h3>
-      <h5 id="high">0</h5>
-    </div>
-
     <script type="module" src="/main.js"></script>
   </body>
 </html>

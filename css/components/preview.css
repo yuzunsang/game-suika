@@ -1,0 +1,35 @@
+#preview {
+  position: absolute;
+  top: 20px;
+  left: 50px;
+  width: 25%;
+  height: 95vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.preview__next {
+  width: 50%;
+  height: 18%;
+  background-color: var(--light-purple);
+}
+.preview__title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem auto;
+}
+.preview__order {
+  width: 50%;
+  height: 30%;
+  border-radius: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("/grade-guide.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

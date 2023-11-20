@@ -47,6 +47,19 @@ let currentFruit = null;
 let disableAction = false;
 let interval = null;
 
+// 점수 기록
+const recordsScore = document.querySelector(".records__score");
+recordsScore.innerHTML = `
+<div class="records__curr card">
+<h1 class="records__curr--title">SCORE</h1>
+<h3 id="score" class="records__curr--score">0</h3>
+</div>
+<div class="records__high card">
+<h1 class="records__high--title">HIGH SCORE</h1>
+<h3 id="high" class="records__high--score">0</h3>
+</div>
+`;
+
 // 최고 기록 갱신 시 localStorage에 저장
 const score = document.querySelector("#score");
 const high = document.querySelector("#high");
